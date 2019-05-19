@@ -1,0 +1,177 @@
+---
+permalink: /style.css
+---
+
+#page-header {
+	Display: Block;
+	Box-Sizing: Border-Box;
+	Margin: 0 -1EM 4EM;
+	Border-Style: None None Dashed;
+	Border-Color: Transparent Transparent #004599;
+	Border-Width: 0 0 1PX;
+	Padding: 1EM 0;
+	Background: #FFFFFF;
+	Min-Height: 12EM;
+	Text-Align: Center;
+}
+
+#page-links { Display: Block;
+
+	& > a {
+		Display: Inline-Block;
+		Box-Sizing: Border-Box;
+		Margin: .75EM 0 0;
+		Border: 2PX CurrentColor Solid;
+		Padding: 3PX;
+		Width: 10EM;
+		Color: #004599;
+		Background: #FFFFFF;
+		Box-Shadow: -3PX -3PX #F0F0F0 Inset;
+		Font-Weight: 400;
+
+		&:Active { Box-Shadow: 3PX 3PX #F0F0F0 Inset }
+		& + a { Margin-Top: .5EM }
+	}
+
+	& > hr {
+		Display: Block;
+		Margin: .75EM .75EM 0;
+		Border-Style: Dashed None None;
+		Border-Color: CurrentColor Transparent Transparent;
+		Border-Width: 1PX 0 0;
+		Color: #004599;
+		Background: Transparent;
+	}
+}
+
+#site-title {
+	Display: Inline-Block;
+	Margin: -2.5PX 2.5PX 2.5PX -2.5PX;
+	Padding: .66667EM .5EM;
+	Width: 4EM;
+	Color: #000000;
+	Background: #F1CCC0;
+	Box-Shadow:
+		5PX 5PX #000000 Inset,
+		-3PX -3PX #CD2C00 Inset,
+		8PX 8PX #CD2C00 Inset,
+		-8PX -8PX #000000 Inset,
+		5PX 5PX #F0F0F0;
+	Font-Size: 2EM;
+	Font-Weight: 700;
+	Line-height: 1;
+	Text-Align: Center;
+	Text-Transform: Uppercase;
+
+	span:First-Child { Color: #8A1C00 }
+
+	span:Nth-Child(2) {
+		Display: Block;
+		Margin: .125EM 0;
+		Color: #05285C;
+		Font-Size: 1.33333EM;
+		Font-Weight: 600;
+	}
+
+	span:Last-Child { Color: #004599 }
+}
+
+*:link,
+*:visited {
+	Color: #004599;
+	Font-Weight: 400;
+}
+
+body {
+	Margin: 0 Auto 0 0;
+	Padding: 0 2EM 7.5EM;
+	Max-Width: 37EM;
+	Color: #000000;
+	Background: #FFFFFF;
+}
+
+cite {
+	Font-Weight: 400;
+	Font-Style: Inherit;
+}
+
+dfn {
+	Color: #CD2C00;
+	Font-Weight: 700;
+	Font-Style: Inherit;
+
+	cite, em, u { Font-Weight: Inherit }
+}
+
+dl { Margin: 0 }
+
+dt { Margin-Top: 1.5EM }
+
+dt + dt { Margin-Top: 0 }
+
+em {
+	Font-Family: "M+ 2c", Sans-Serif;
+	Font-Weight: 600;
+	Font-Style: Inherit;
+
+	cite, u { Font-Weight: Inherit }
+}
+
+html {
+	Margin: 0;
+	Padding: 0;
+	Color: #000000;
+	Background: #FFFFFF;
+	Font-Family: "M+ 1c", Sans-Serif;
+	Font-Weight: 300;
+	Font-Synthesis: None;
+	Line-Height: 1.5;
+}
+
+p {
+	Margin: 0;
+	Text-Align: Justify;
+
+	& + p { Text-Indent: 3EM;
+
+		& > * { Text-Indent: 0 }
+	}
+}
+
+strong { Font-Weight: 900 }
+
+u {
+	Font-Weight: 400;
+	Text-Decoration: None;
+}
+
+@media SCREEN And (Min-Width: 24EM) {
+	#page-links { Padding-Left: 12EM }
+	#site-title { Float: Left }
+}
+
+@media SCREEN And (Min-Width: 36EM) {
+	#page-header {
+		Position: Absolute;
+		Top: 0;
+		Bottom: 0;
+		Left: 0;
+		Margin: 0;
+		Border-Style: None Dashed None None;
+		Border-Color: Transparent #004599 Transparent Transparent;
+		Border-Width: 0 1PX 0 0;
+		Width: 12EM;
+		Text-Align: Center;
+		Overflow-Y: Auto;
+	}
+
+	#page-links { Padding-Left: 0 }
+	#site-title { Float: None }
+	html { Padding-Left: 12EM }
+	body { Padding-Top: 7.5EM }
+}
+
+@media SCREEN And (Min-Width: 73EM) {
+	html { Padding-Right: 24EM }
+	body { Margin-Left: Auto }
+}
