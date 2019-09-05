@@ -72,7 +72,8 @@ body>header *|*:Visited:Hover {
 /* Blocky Things */
 aside {
 	Display: Flow-Root;
-	Padding: 0 3REM;
+	Margin: .5REM 0;
+	Padding: .5REM 3REM;
 	Color: #57534C;
 	Background:  Linear-Gradient(
 		To Bottom,
@@ -81,9 +82,14 @@ aside {
 	), #FAF8F7;
 }
 aside:Target {
-	Margin: 0;
-	Padding: 0 3REM;
+	Margin: .5REM 0;
+	Padding: .5REM 3REM;
 }
+dl aside { Background-Image: Linear-Gradient(
+	To Bottom,
+	#4B2DF73F,
+	#4B2DF73F
+) }
 blockquote,
 div[role=note],
 dl {
@@ -106,6 +112,14 @@ dl:Target {
 	Margin: 1REM -2REM 1REM Calc(-2REM - 5PX);
 	Padding: 0 3REM;
 }
+aside blockquote:First-Child,
+aside dl:First-Child,
+aside div[role=note]:First-Child,
+aside pre:First-Child { Margin-Top: 0 }
+aside blockquote:Last-Child,
+aside dl:Last-Child,
+aside div[role=note]:Last-Child,
+aside pre:Last-Child { Margin-Bottom: 0 }
 blockquote {
 	Border-Color: #1AACEB;
 	Color: #1F1A14;
@@ -268,17 +282,20 @@ aside dd {
 	Margin: 0;
 }
 aside dd:Target { Margin: -3PX }
-aside dd::AFTER {
+aside dd:Not(:Last-Child)::AFTER {
 	Display: Block;
 	Margin: 0 0 1EM;
+	Content: "";
+}
+aside dd+dd::BEFORE {
+	Display: Block;
+	Margin: -1EM 0 0;
 	Content: "";
 }
 dd:Last-Child { Margin-Bottom: 1EM }
 dd:Last-Child:Target { Margin-Bottom: Calc(1EM - 3PX) }
 aside dd:Last-Child { Margin-Bottom: 0 }
 aside dd:Last-Child:Target { Margin-Bottom: -3PX }
-dd>*:First-Child { Margin-Top: 0 }
-dd>*:Last-Child { Margin-Bottom: 0 }
 dd>p { Margin: 0 }
 dd>p+p { Text-Indent: 2EM }
 dd>p+p>* { Text-Indent: 0 }
